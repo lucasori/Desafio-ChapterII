@@ -15,10 +15,9 @@ class TurnUserAdminUseCase {
       throw new Error("User not found");
     }
 
-    user.admin = true;
-    user.updated_at = new Date();
+    const admin = this.usersRepository.turnAdmin(user);
 
-    return user;
+    return admin;
   }
 }
 
